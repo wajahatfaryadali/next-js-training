@@ -1,8 +1,14 @@
 :root {
+  /* responsive screen sizes taken from bs nichy link hai ref k liye */
+  /* https://getbootstrap.com/docs/5.0/layout/breakpoints/ */
+  --xs: 0;
+  --sm: 576px;
+  --md: 768px;
+  --lg: 992px;
+  --xl: 1200px;
+  --xxl: 1400px;
 
   --bg: #1B2631;
-  /* #17202A */
-  /*  */
   --textColor: #ffffff;
 }
 
@@ -24,12 +30,54 @@ a {
 }
 
 .container {
-  background-color: #17202A;
-  width: 1536px;
+  /* background-color: #17202A; */
+  width: var(--xxl);
   margin: auto;
   height: 100vh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 0px 2.5rem;
+  padding: 0px 2rem;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    width: var(--xl);
+    padding: 0px 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: var(--lg);
+    padding: 0px 1.75rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: var(--md);
+    padding: 0px 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: var(--sm);
+    padding: 0px 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100vw;
+    padding: 0 1rem;
+    /* Adjust padding for smaller screens */
+  }
+}
+
+/* some common classes */
+
+.cursor-pointer {
+  cursor: pointer;
 }

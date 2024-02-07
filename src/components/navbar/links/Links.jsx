@@ -1,66 +1,48 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import NavLink from './navLink/navLink'
 import classes from '../navbar.module.css'
+import ConditionalLinks from './navLink/conditionalLinks';
+import { MdMenu } from "react-icons/md";
+import { MdOutlineClose } from "react-icons/md";
+
+import { links } from '../config';
 
 function Links() {
-
-    const links = [
-        {
-            title: 'Home',
-            path: '/'
-        },
-        {
-            title: 'About',
-            path: '/about'
-        },
-        {
-            title: 'Blog',
-            path: '/blog'
-        },
-        {
-            title: 'Contact',
-            path: '/contact'
-        },
-        // {
-        //     title: 'Login',
-        //     path: '/auth/login'
-        // },
-        // {
-        //     title: 'Sign Up',
-        //     path: '/auth/signUp'
-        // },
-    ]
 
     const isAdmin = true;
     const isSession = true;
 
-    return (
-        <div className={classes.LinksContainer}>
-            {links.map((link) =>
-                <NavLink link={link} />
-            )}
-            {isSession ?
-                <>
-                    {isAdmin &&
-                        <NavLink
-                            link={{
-                                title: 'Admin',
-                                path: '/admin'
-                            }}
-                        />}
-                    <button className={classes.Logout}>
-                        Logout
-                    </button>
-                </>
-                :
-                <NavLink
-                    link={{
-                        title: 'Login',
-                        path: '/login'
-                    }}
-                />
-            }
+    const [open, setOpen] = useState(false);
 
+    return (
+        <div>
+            <div className={classes.LinksContainer}>
+                {links.map((link, i) =>
+                    <NavLink link={link} key={i} />
+                )}
+                <ConditionalLinks isSession={isSession} isAdmin={isAdmin} />
+            </div>
+            <div className={classes.LinksContainerM}>
+                {open ?
+                    <MdOutlineClose
+                        className={`${classes.CloseIcon} cursor-pointer`}
+                        onClick={() => setOpen(false)}
+                    />
+                    :
+                    <MdMenu
+                        className={`${classes.MenuIcon} cursor-pointer`}
+                        onClick={() => setOpen(true)}
+                    />
+                }
+                {open &&
+                    <div className={classes.MenuListContainerM}>
+                        {links.map((link, i) =>
+                            <NavLink link={link} key={i} />
+                        )}
+                        <ConditionalLinks isSession={isSession} isAdmin={isAdmin} />
+                    </div>}
+            </div>
         </div>
     )
 }

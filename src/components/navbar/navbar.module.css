@@ -4,6 +4,7 @@
     justify-content: space-between;
     padding: 8px 0px;
     align-items: center;
+    height: 65px;
 }
 
 .logo {
@@ -18,6 +19,26 @@
     font-weight: 500;
 }
 
+.LinksContainerM {
+    display: block;
+}
+
+.MenuListContainerM {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    background-color: var(--bg);
+    width: 100%;
+    text-align: center;
+    gap: 1rem;
+    height: calc(100vh - 48px);
+    justify-content: center;
+    padding: 0px 20px;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
 .Link {
     padding: 4px 8px;
 }
@@ -30,7 +51,36 @@
 
 .Logout {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 4px 8px;
     border-radius: 6px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+}
+
+.MenuIcon {
+    font-size: 2rem;
+}
+
+.CloseIcon {
+    font-size: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        height: 55px;
+    }
+
+    .LinksContainer {
+        display: none;
+        height: 55px;
+    }
+}
+
+@media (min-width: 769px) {
+    .LinksContainerM {
+        display: none;
+    }
 }
