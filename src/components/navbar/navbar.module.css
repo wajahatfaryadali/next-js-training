@@ -1,0 +1,36 @@
+.container {
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.LinksContainer {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.Link {
+    padding: 4px 8px;
+}
+
+.ActiveLink {
+    color: var(--bg);
+    background-color: var(--textColor);
+    border-radius: 6px;
+}
+
+.Logout {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+}

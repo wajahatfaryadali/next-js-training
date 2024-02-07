@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import React from 'react'
+import NavLink from './navLink/navLink'
+import classes from '../navbar.module.css'
 
 function Links() {
 
@@ -30,11 +31,36 @@ function Links() {
         // },
     ]
 
+    const isAdmin = true;
+    const isSession = true;
+
     return (
-        <div>
-            {links.map((link, i) =>
-                <Link href={link.path} key={i}>{link.title}</Link>
+        <div className={classes.LinksContainer}>
+            {links.map((link) =>
+                <NavLink link={link} />
             )}
+            {isSession ?
+                <>
+                    {isAdmin &&
+                        <NavLink
+                            link={{
+                                title: 'Admin',
+                                path: '/admin'
+                            }}
+                        />}
+                    <button className={classes.Logout}>
+                        Logout
+                    </button>
+                </>
+                :
+                <NavLink
+                    link={{
+                        title: 'Login',
+                        path: '/login'
+                    }}
+                />
+            }
+
         </div>
     )
 }
