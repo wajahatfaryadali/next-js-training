@@ -5,21 +5,6 @@ import classes from './contact.module.css'
 
 function Contact() {
 
-  const stats = [
-    {
-      title: 'Year of Experience',
-      count: '10 k+'
-    },
-    {
-      title: 'Services and Plugins',
-      count: '101 k+'
-    },
-    {
-      title: 'Happy clients',
-      count: '102 k+'
-    }
-  ]
-
   return (
     <main className={classes.mainContainer}>
       <div className={classes.imgContainer}>

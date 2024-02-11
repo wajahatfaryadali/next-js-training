@@ -7,6 +7,7 @@ import { MdMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 
 import { links } from '../config';
+import MobileMenu from './mobileMenu/MobileMenu';
 
 function Links() {
 
@@ -40,12 +41,13 @@ function Links() {
                     />
                 }
                 {open &&
-                    <div className={classes.MenuListContainerM}>
-                        {links.map((link, i) =>
-                            <NavLink link={link} key={i} />
-                        )}
-                        <ConditionalLinks isSession={isSession} isAdmin={isAdmin} />
-                    </div>}
+                    <MobileMenu
+                        hadnleNavClick={hadnleNavClick}
+                        isSession={isSession}
+                        isAdmin={isAdmin}
+                        setOpen={setOpen}
+                    />
+                }
             </div>
         </div>
     )

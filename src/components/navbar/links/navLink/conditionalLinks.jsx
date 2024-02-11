@@ -1,7 +1,7 @@
 import React from 'react'
 import NavLink from './navLink'
 import classes from '../../navbar.module.css'
-function ConditionalLinks({isSession, isAdmin}) {
+function ConditionalLinks({ isSession, isAdmin, hadnleNavClick }) {
     return (
         isSession ?
             <>
@@ -12,7 +12,7 @@ function ConditionalLinks({isSession, isAdmin}) {
                             path: '/admin'
                         }}
                     />}
-                <button className={classes.Logout}>
+                <button className={classes.Logout} onClick={() => hadnleNavClick('logout')}>
                     Logout
                 </button>
             </>
