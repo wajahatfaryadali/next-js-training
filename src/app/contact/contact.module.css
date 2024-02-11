@@ -1,0 +1,80 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100px;
+    max-width: 100%;
+    height: 500px;
+    /* border: 1px solid; */
+}
+
+.formContainer {
+    order: 2;
+    flex-grow: 1;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.imgContainer {
+    order: 1;
+    flex-grow: 1;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroImg {
+    width: 100%;
+    height: 100%;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form input,
+.form textarea {
+    padding: 20px;
+    border-radius: 6px;
+    border: none;
+    outline-style: none;
+    font-size: 1rem;
+    /* background-color: var(--bgSoft); */
+    /* color: var(--textWhite); */
+}
+
+.submitBtn {
+    padding: 16px;
+    background-color: var(--primaryBlue);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--textOffWhite);
+    border: none;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .formContainer {
+        width: 100%;
+    }
+
+
+    .imgContainer {
+        width: 100%;
+        display: none;
+    }
+
+    .submitBtn {
+        padding: 8px;
+    }
+}
