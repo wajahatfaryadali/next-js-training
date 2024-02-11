@@ -1,8 +1,9 @@
 .footerContainer {
-    background: #1b232c;
+    background: var(--bg);
     display: flex;
     justify-content: space-between;
     padding: 8px 0px;
+    
 }
 
 .logo {
