@@ -10,7 +10,9 @@
 
   /* --bg: #1B2631; */
   --bg: #0c0b22;
-  --textColor: #ffffff;
+  --textWhite: #ffffff;
+  --textOffWhite: #f7f7f7;
+  --primaryBlue: #2e74fd;
 }
 
 
@@ -23,7 +25,7 @@
 
 body {
   background-color: var(--bg);
-  color: var(--textColor);
+  color: var(--textOffWhite);
 }
 
 a {

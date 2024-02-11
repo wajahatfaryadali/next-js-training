@@ -45,7 +45,7 @@
 
 .ActiveLink {
     color: var(--bg);
-    background-color: var(--textColor);
+    background-color: var(--textWhite);
     border-radius: 6px;
 }
 
