@@ -15,6 +15,10 @@ function Links() {
 
     const [open, setOpen] = useState(false);
 
+    const hadnleNavClick = (e) => {
+        alert(e)
+    }
+
     return (
         <div>
             <div className={classes.LinksContainer}>
