@@ -20,13 +20,11 @@ const PostCard = ({ post }) => {
             </div>
             <div className={styles.bottom}>
                 <h1 className={styles.title}>
-                    {/* {post.title} */}
-                    title
+                    {post.title}
                 </h1>
-                {/* <p className={styles.desc}>{post.body}</p> */}
-                <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dolores?</p>
+                <p className={styles.desc}>{post.body}</p>
                 {/* <Link className={styles.link} href={`/blog/${post.slug}`}>READ MORE</Link> */}
-                <Link className={styles.link} href={`/blog/singlePost`}>READ MORE</Link>
+                <Link className={styles.link} href={`/blog/${post.id}`}>READ MORE</Link>
             </div>
         </div>
     )

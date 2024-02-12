@@ -1,14 +1,21 @@
 import React from 'react'
 import PostCard from '@/components/postCard/postCard'
 import classes from './blog.module.css'
+import { getPosts } from '@/apis/apis'
 
-function Blog() {
+async function Blog() {
+  const posts = await getPosts();
+  console.log('posts ******* ', posts)
+
+
   return (
     <div className={classes.container}>
-      <div className={classes.post}>
-        <PostCard/>
-      </div>
-    </div>
+      {posts?.map((post, i) =>
+        <div className={classes.post} key={i}>
+          <PostCard post={post} />
+        </div>
+      )}
+    </div >
   )
 }
 
