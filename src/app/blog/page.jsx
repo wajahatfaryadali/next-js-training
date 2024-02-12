@@ -5,9 +5,7 @@ import { getPosts } from '@/apis/apis'
 
 async function Blog() {
   const posts = await getPosts();
-  console.log('posts ******* ', posts)
-
-
+  
   return (
     <div className={classes.container}>
       {posts?.map((post, i) =>

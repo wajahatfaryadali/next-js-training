@@ -12,3 +12,13 @@ export const getPosts = async () => {
 
     return res.json();
 }
+
+export const getSinglePostById = async (id) => {
+ 
+    const res = await fetch(`${url}/${id}`)
+    if (!res.ok) {
+        throw new Error('Something went wrong in line 20 apis');
+    }
+
+    return res.json();
+}

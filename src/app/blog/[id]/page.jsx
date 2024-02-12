@@ -4,19 +4,25 @@ import smapleImg from '../../../assets/pngs/noavatar.png'
 
 import classes from './singlePost.module.css'
 import PostUser from '@/components/postUser/PostUser';
+import { getSinglePostById } from '@/apis/apis';
 
-function SinglePost() {
+async function SinglePost({ params }) {
+
+    // console.log('params check *** ', params)
+    const { id } = params;
+    const post = await getSinglePostById(id)
+
     return (
         <div className={classes.container}>
             {/* {post.img && ( */}
             <div className={classes.imgContainer}>
                 {/* <Image src={post.img} alt="" fill className={classes.img} /> */}
-                <Image src={smapleImg} alt="" fill className={classes.img} />
+                <Image src={smapleImg} alt="" className={classes.img} priority={false} />
             </div>
             {/* )} */}
             <div className={classes.textContainer}>
-                {/* <h1 className={classes.title}>{post.title}</h1> */}
-                <h1 className={classes.title}>Lorem.</h1>
+                <h1 className={classes.title}>{post.title}</h1>
+                {/* <h1 className={classes.title}>Lorem.</h1> */}
                 <div className={classes.detail}>
                     {/* {post && ( */}
                     <Suspense fallback={<div>Loading...</div>}>
@@ -32,8 +38,7 @@ function SinglePost() {
                         </span>
                     </div>
                 </div>
-                {/* <div className={classes.content}>{post.desc}</div> */}
-                <div className={classes.content}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat fuga, et nihil enim quisquam explicabo rerum assumenda, quas ab sequi nobis. Veritatis error velit sit consectetur aperiam natus voluptatem expedita?</div>
+                <div className={classes.content}>{post.body}</div>
             </div>
         </div>
     );
