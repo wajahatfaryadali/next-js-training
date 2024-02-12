@@ -27,7 +27,7 @@ async function SinglePost({ params }) {
                     {/* {post && ( */}
                     <Suspense fallback={<div>Loading...</div>}>
                         {/* <PostUser userId={post.userId} /> */}
-                        <PostUser />
+                        <PostUser userId={post?.id} />
                     </Suspense>
                     {/* )} */}
                     <div className={classes.detailText}>
