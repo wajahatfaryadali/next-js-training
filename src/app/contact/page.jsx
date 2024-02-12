@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import contact from '../../assets/pngs/contact.png'
@@ -5,10 +6,11 @@ import classes from './contact.module.css'
 
 function Contact() {
 
+  console.log('console working here')
   return (
     <main className={classes.mainContainer}>
       <div className={classes.imgContainer}>
-        <Image src={contact} alt="hero-image" className={classes.heroImg} />
+        <Image src={contact} alt="hero-image" className={classes.heroImg} priority={true} />
       </div>
       <div className={classes.formContainer}>
         <form action="" className={classes.form}>
