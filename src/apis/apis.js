@@ -3,11 +3,7 @@ import { api, baseUrl } from "./constants";
 const postsUrl = baseUrl+api.posts;
 const usersUrl = baseUrl+api.users;
 
-export const getPosts = async () => {
-    // adding {cache: 'force-cache'} will cache api response for later fast rendering this is default
-    // adding {cache: 'no-store'} will refetch data each time 
-    // adding {next: {revalidate: 3600}} will refetch data after each 3600s
-
+export const getPosts = async () => {    
     const res = await fetch(postsUrl, { cache: 'no-store' })
     if (!res.ok) {
         throw new Error('Something went wrong in line 6 apis');
@@ -28,10 +24,10 @@ export const getSinglePostById = async (id) => {
 
 export const getSingleUserById = async (userId) => {
  
-    console.log('*************** userId *************** ', userId)
     const res = await fetch(`${usersUrl}/${userId}`)
     console.log(res)
     if (!res.ok) {
+        console.log("error ********", res)
         throw new Error('Something went wrong in line 20 apis');
     }
 

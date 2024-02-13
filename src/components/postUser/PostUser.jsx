@@ -1,14 +1,13 @@
 import classes from "./postUser.module.css";
 import Image from "next/image";
 import smapleImg from '../../assets/pngs/noavatar.png'
-import { getSingleUserById } from "@/apis/apis";
+// import { getSingleUserById } from "@/apis/apis";
+import { getMongoUserById } from "@/apis/data";
 
 const PostUser = async ({userId}) => {
-  
-  console.log('************************************** ', userId)
-  const user = await getSingleUserById(userId)
 
-  console.log(user)
+  // const user = await getSingleUserById(userId)
+  const user = await getMongoUserById(userId)
 
   return (
     <div className={classes.container}>
