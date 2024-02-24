@@ -24,8 +24,9 @@ const userSchema = new mongoose.Schema(
             type: String
         },
         isAdmin: {
-            isAdmin: Boolean,
+            type: Boolean,
             default: false
+
         }
     },
     { timestamps: true }
@@ -59,5 +60,5 @@ const postSchema = new mongoose.Schema(
 )
 
 
-export const User = mongoose.model('User', userSchema);
-export const Post = mongoose.model('Post', postSchema);
+export const User = mongoose.model('User') || mongoose.model('User', userSchema);
+export const Post = mongoose.model('Post') || mongoose.model('Post', postSchema);

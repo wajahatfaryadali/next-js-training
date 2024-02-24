@@ -7,7 +7,8 @@ import { getMongoPosts } from '@/apis/data';
 async function Blog() {
   // const posts = await getPosts();
   const posts = await getMongoPosts();
-  
+  console.log('total Posts **** ', posts)
+
   return (
     <div className={classes.container}>
       {posts?.map((post, i) =>
