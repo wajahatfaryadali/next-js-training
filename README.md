@@ -134,3 +134,6 @@ export const getPosts = async () => {
     return res.json();
 }
 ```
+
+### Day 5
+- #### Hydration error
